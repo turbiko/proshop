@@ -14,6 +14,15 @@ from .base import *
 
 print("Run development server configuration")
 
+# SECURITY WARNING: don't run with debug turned on in production!
+
+print(f'{DEBUG=}', DEBUG)
+
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'debug-secret-key-r9crzp6^5+du%95n=p$-)=u-apaemk3w(5n=p$-)=u-apaemk3w(o4c%6&z')
+print(f'Development {SECRET_KEY=}')
+
+
 
 ALLOWED_HOSTS = ['*']
 

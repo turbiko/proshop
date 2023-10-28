@@ -26,16 +26,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-if DEBUG:
-    SECRET_KEY = 'debug-secret-key-r9crzp6^5+du%95n=p$-)=u-apaemk3w(5n=p$-)=u-apaemk3w(o4c%6&z'
-else:
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'secret-key-r9crzp6^5+du%95n=p$-)=u-apaemk3w(5n=p$-)=u-apaemk3w(o4c%6&z')
-
-print(f'{SECRET_KEY=}')
+DEBUG = os.environ.get('DEBUG')
 
 # Application definition
 
@@ -116,6 +107,10 @@ LANGUAGES = [
     ('uk', _('Ukrainian')),
     ('en', _('English')),
 ]
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 TIME_ZONE = 'UTC'
 

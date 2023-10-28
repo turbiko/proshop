@@ -16,8 +16,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 print("Run production server configuration")
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+print(f'{DEBUG=}', DEBUG)
 
+
+SECRET_KEY = os.environ.get('SECRET_KEY', 'secret-key-r9crzp6^5+du%95n=p$-)=u-apaemk3w(5n=p$-)=u-apaemk3w(o4c%6&z')
+print(f'Production {SECRET_KEY=}')
 
 ALLOWED_HOSTS = [
     "localhost",
